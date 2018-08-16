@@ -19,3 +19,23 @@ function randomElement(array){
     return array[randomInt(0, array.length-1)];
 }
 
+/**
+ * Shuffles an array
+ * @param {array} array the array
+ * 
+ * @return {array} a shuffled array
+ */
+function shuffleArray(array){
+    let newArray = [];
+    let randomIndex;
+    //while the array contains elements
+    while(array.length > 0){
+        //pick an random index from the array
+        randomIndex = randomInt(0, array.length-1);
+        //push an element with that index to a new array
+        newArray.push(array[randomIndex]);
+        //remove that element from the old array
+        array.splice(randomIndex, 1);
+    }
+    return newArray;
+}
